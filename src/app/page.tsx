@@ -1,8 +1,11 @@
+"use client";
 import SearchBar from "./components/SearchBar";
 import TimeSelector from "./components/TimeSelector";
 import BottomCards from "./components/BottomCards";
-import Map from "./components/Maps";
 import Header from "./components/Headers";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("./components/Maps"), { ssr: false });
 
 export default function Home() {
   return (
